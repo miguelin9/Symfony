@@ -18,9 +18,9 @@ class pruebasController extends Controller {
         // sin usar request
 //        return $this->redirect($this->container->get("router")->getContext()->getBaseUrl()."/helloWorld?hola=true");
         
-        var_dump($request->query->get("hola"));
-        var_dump($request->get("hola-post"));// se usa este más que el de arriba
-        die();
+//        var_dump($request->query->get("hola"));
+//        var_dump($request->get("hola-post"));// se usa este más que el de arriba
+//        die();
         
         // replace this example code with whatever you need
         return $this->render('AppBundle:pruebas:index.html.twig', [

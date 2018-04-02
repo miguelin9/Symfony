@@ -1,1 +1,5 @@
-{{texto}}
+{% extends "::layout.html.twig" %}
+{% block container %}
+    {{parent()}}
+    {{texto}}
+{% endblock %}
