@@ -8,11 +8,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 class pruebasController extends Controller {
     
-    public function indexAction(Request $request) {
+    public function indexAction(Request $request, $name, $page) {
 
         // replace this example code with whatever you need
         return $this->render('AppBundle:pruebas:index.html.twig', [
-                    'texto' => "Texto enviado desde la acción del controlador."
+                    'texto' => $name . " - " . $page
         ]);
     }
 
