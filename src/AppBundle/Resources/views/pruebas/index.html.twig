@@ -66,4 +66,8 @@
     {# usar una vista dentro de otra #}
     {{ include('AppBundle:pruebas:partial.html.twig') }}
     
+    <hr/>
+    {# usar una función externa #}
+    {{ generateTable(5,7)|raw }}
+    
 {% endblock %}
