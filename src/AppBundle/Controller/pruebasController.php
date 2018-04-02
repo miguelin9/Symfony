@@ -10,6 +10,14 @@ class pruebasController extends Controller {
     
     public function indexAction(Request $request, $name, $page) {
 
+        // formas de redireccionar
+        // por nombre de la ruta
+//        return $this->redirect($this->generateUrl("HolaMundo"));
+        // usando request (se pone un parametro para saber que redirecciona bien)
+        return $this->redirect($request->getBaseUrl()."/helloWorld?hola=true");
+        // sin usar request
+//        return $this->redirect($this->container->get("router")->getContext()->getBaseUrl()."/helloWorld?hola=true");
+        
         // replace this example code with whatever you need
         return $this->render('AppBundle:pruebas:index.html.twig', [
                     'texto' => $name . " - " . $page
