@@ -70,4 +70,10 @@
     {# usar una función externa #}
     {{ generateTable(5,7)|raw }}
     
+    <hr/>
+    <!-- probando filtros por defecto de twig -->
+    {{ fecha.date|date('d-m-y') }}
+    {% set texto = '   probando...    :' %}
+    {{ texto|trim(':') }}
+    
 {% endblock %}
