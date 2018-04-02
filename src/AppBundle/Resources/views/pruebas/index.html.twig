@@ -76,4 +76,8 @@
     {% set texto = '   probando...    :' %}
     {{ texto|trim(':') }}
     
+    <hr/>
+    {# probando filtros personalizados #}
+    {{ "cadena de texto"|addText(2) }}
+    
 {% endblock %}
