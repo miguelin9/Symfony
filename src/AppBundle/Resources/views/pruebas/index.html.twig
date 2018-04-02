@@ -1,5 +1,32 @@
 {% extends "::layout.html.twig" %}
 {% block container %}
+    
+    <!-- acceder al contenido de la plantilla -->
     {{parent()}}
+    
+    <!-- imprimir la variable $texto del controlador -->
     {{texto}}
+    
+    <hr/>
+    <!-- acceder al contenido del array u objeto y probando if con funciones-->
+    {{ fruta.pera }}
+    {% if fruta.pera starts with 'r' %}
+        {{fruta.manzana}}
+    {% endif %}
+    
+    <hr/>    
+    <!-- definir una variable e imprimirla -->
+    {% set variable = "Hola Twig" %}
+    {{variable}}
+    
+    <hr/>
+    <!-- usando el bucle for y el condicional if -->
+    {% if productos|length > 0 %}
+        <ul>
+            {% for aux in productos %}
+                <li>{{ aux.producto  }} - {{ aux.precio }}</li> 
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
 {% endblock %}
