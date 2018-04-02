@@ -1,6 +1,10 @@
 {% extends "::layout.html.twig" %}
 {% block container %}
     
+    {#
+        Prueba de un comentario en bloque
+    #}
+    
     <!-- acceder al contenido de la plantilla -->
     {{parent()}}
     
@@ -28,5 +32,38 @@
             {% endfor %}
         </ul>
     {% endif %}
+    
+    <hr/>
+    {# funciones predefinidas #}
+    {% set fecha = date("-2 days","Europe/Madrid") %}
+    {{ dump(fecha) }}
+    <br/>
+    <br/>
+    
+    <hr/>
+    {{ "probando el máximo =" }}
+    {{ max([1,20,55,4,6]) }}
+    
+    <hr/>
+    {{ "probando random de números" }}
+    {{ random(10) }}
+    
+    <hr/>
+    {{ "probando random de array" }}
+    {{ random(["primero","segundo","tercero"]) }}
+    
+    <hr/>
+    {{ "probando rangos" }}<br/>
+    {% for i in range(1,10) %}
+        {{ i  }} 
+    {% endfor %}
+    <br/>
+    {% for i in range(1,10,2) %}
+        {{ i  }} 
+    {% endfor %}
+    
+    <hr/>
+    {# usar una vista dentro de otra #}
+    {{ include('AppBundle:pruebas:partial.html.twig') }}
     
 {% endblock %}
