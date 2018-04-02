@@ -4,5 +4,5 @@ pruebas_index:
     methods: [GET]
     requirements:
         lang: es|en|fr
-        name: \w+
+        name: "[a-zA-Z]*"
         page: \d+
