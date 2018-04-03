@@ -126,5 +126,24 @@ class pruebasController extends Controller {
         
         die();
     }
+    
+    // Hacer una consulta nativa SQL
+    public function nativeSqlAction() {
+        $em = $this->getDoctrine()->getManager();
+        $db = $em->getConnection();
+        
+        $query = "SELECT * FROM cursos";
+        $stmt = $db->prepare($query);
+        $params = array();
+        $stmt->execute($params);
+        
+        $cursos = $stmt->fetchAll();
+        
+        foreach ($cursos as $curso) {
+            echo $curso["titulo"]."<br/>";
+        }
+        
+        die();
+    }
 
 }
