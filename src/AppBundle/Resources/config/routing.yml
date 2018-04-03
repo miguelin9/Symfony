@@ -30,3 +30,7 @@ pruebas_native:
 pruebas_dql:
     path: /pruebas/dql
     defaults: { _controller: AppBundle:pruebas:dql }
+    
+pruebas_query_builder:
+    path: /pruebas/queryBuilder
+    defaults: { _controller: AppBundle:pruebas:queryBuilder }

@@ -146,13 +146,35 @@ class pruebasController extends Controller {
         die();
     }
     
-        // Probando DQL (lenguaje propio de doctrine para consultas)
+    // Probando DQL (lenguaje propio de doctrine para consultas)
     public function dqlAction() {
         $em = $this->getDoctrine()->getManager();
         
         $query = $em->createQuery(
                 "SELECT c FROM AppBundle:Curso c WHERE c.precio > :precio"
                 )->setParameter("precio", "75");
+        
+        $cursos = $query->getResult();
+        echo "<h4>Cursos mayores a 75€</h4>";
+        foreach ($cursos as $curso) {
+            echo $curso->getId()."<br/>";
+            echo $curso->getTitulo()."<br/>";
+            echo $curso->getDescripcion()."<br/>";
+            echo $curso->getPrecio()."<br/><hr/>";
+        }
+        
+        die();
+    }
+    
+    // Probando Query Builder
+    public function queryBuilderAction() {
+        $em = $this->getDoctrine()->getManager();
+        $cursos_repo = $em->getRepository("AppBundle:Curso");
+        
+        $query = $cursos_repo->createQueryBuilder("c")
+                ->where("c.precio > :precio")
+                ->setParameter("precio", "75")
+                ->getQuery();
         
         $cursos = $query->getResult();
         echo "<h4>Cursos mayores a 75€</h4>";
