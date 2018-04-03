@@ -63,13 +63,27 @@ class pruebasController extends Controller {
         $em = $this->getDoctrine()->getManager();
         $cursos_repo = $em->getRepository("AppBundle:Curso");
         $cursos = $cursos_repo->findAll();
-        
+            
         foreach ($cursos as $curso) {
             echo $curso->getId()."<br/>";
             echo $curso->getTitulo()."<br/>";
             echo $curso->getDescripcion()."<br/>";
             echo $curso->getPrecio()."<br/><hr/>";
         }
+        
+        echo "<h4>cursos de 80€</h4>";
+        $cursos = $cursos_repo->findBy(array("precio"=>80));
+            
+        foreach ($cursos as $curso) {
+            echo $curso->getId()."<br/>";
+            echo $curso->getTitulo()."<br/>";
+            echo $curso->getDescripcion()."<br/>";
+            echo $curso->getPrecio()."<br/><hr/>";
+        }
+        
+        echo "<h4>curso de 74€</h4>";
+        $curso = $cursos_repo->findOneByPrecio(74);
+        echo $curso->getTitulo();
         
         die();
     }
