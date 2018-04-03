@@ -22,7 +22,18 @@ class CursoType extends AbstractType
                 "class"=>"form-titulo")
                 ))
             ->add('descripcion', TextareaType::class)
-            ->add('precio', TextType::class)
+//            ->add('precio', TextType::class)
+//            ->add('precio', \Symfony\Component\Form\Extension\Core\Type\ChoiceType::class, array(
+//                "choices" => array(
+//                    "hombre" => "Hombre",
+//                    "mujer" => "Mujer",
+//                    "otro" => "Otro"
+//                )
+//            ))
+                ->add('precio', \Symfony\Component\Form\Extension\Core\Type\CheckboxType::class, array(
+                    "label" => "Mostrar precio ?",
+                    "required" => true
+                ))
             ->add('Guardar', SubmitType::class)
         ;
     }
