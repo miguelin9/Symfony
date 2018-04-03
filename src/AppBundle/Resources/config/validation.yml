@@ -1,0 +1,14 @@
+# La validación se hace a nivel de entidad, pero a su vez funciona en el formulario ya que le pasamos el $curso
+AppBundle\Entity\Curso:
+    properties:
+        titulo:
+            - NotBlank: { message: "El título no puede estar vacío" }
+            - Lenght:
+                min: 2
+                minMessage: "El título tiene que tener más de dos caracteres"
+        descripcion:
+            - NotBlank: { message: "La descripción no puede estar vacía" }
+        precio:
+            - Type:
+                type: numeric
+                message: "El precio tiene que ser númerico"

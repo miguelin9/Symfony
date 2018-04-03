@@ -3,22 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/symfony/src/AppBundle/AppBundle.php</file>
-            <file>file:/opt/lampp/htdocs/symfony/src/AppBundle/Resources/views/pruebas/partial.html.twig</file>
-            <file>file:/opt/lampp/htdocs/symfony/src/AppBundle/Controller/pruebasController.php</file>
-            <file>file:/opt/lampp/htdocs/symfony/src/AppBundle/Resources/views/pruebas/index.html.twig</file>
-            <file>file:/opt/lampp/htdocs/symfony/web/app.php</file>
-            <file>file:/opt/lampp/htdocs/symfony/src/AppBundle/Resources/config/routing.yml</file>
-            <file>file:/opt/lampp/htdocs/symfony/app/config/parameters.yml</file>
-            <file>file:/opt/lampp/htdocs/symfony/src/AppBundle/Twig/FilterVista.php</file>
-            <file>file:/opt/lampp/htdocs/symfony/web/app_dev.php</file>
-            <file>file:/opt/lampp/htdocs/symfony/src/AppBundle/Twig/HelperVistas.php</file>
-            <file>file:/opt/lampp/htdocs/symfony/.gitignore</file>
-            <file>file:/opt/lampp/htdocs/symfony/web/apple-touch-icon.png</file>
-            <file>file:/opt/lampp/htdocs/symfony/web/robots.txt</file>
-            <file>file:/opt/lampp/htdocs/symfony/app/config/services.yml</file>
-            <file>file:/opt/lampp/htdocs/symfony/src/AppBundle/Controller/DefaultController.php</file>
-            <file>file:/opt/lampp/htdocs/symfony/web/config.php</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/AppBundle/Form/CursoType.php</file>
         </group>
     </open-files>
 </project-private>
