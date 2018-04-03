@@ -171,12 +171,7 @@ class pruebasController extends Controller {
         $em = $this->getDoctrine()->getManager();
         $cursos_repo = $em->getRepository("AppBundle:Curso");
         
-        $query = $cursos_repo->createQueryBuilder("c")
-                ->where("c.precio > :precio")
-                ->setParameter("precio", "75")
-                ->getQuery();
-        
-        $cursos = $query->getResult();
+        $cursos = $cursos_repo->getCursos();
         echo "<h4>Cursos mayores a 75€</h4>";
         foreach ($cursos as $curso) {
             echo $curso->getId()."<br/>";

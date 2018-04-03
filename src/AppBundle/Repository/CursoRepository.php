@@ -10,4 +10,15 @@ namespace AppBundle\Repository;
  */
 class CursoRepository extends \Doctrine\ORM\EntityRepository
 {
+    
+    // Obtener los cursos con Query Builder
+    public function getCursos() {
+        $query = $this->createQueryBuilder("c")
+                ->where("c.precio > :precio")
+                ->setParameter("precio", "75")
+                ->getQuery();
+        $cursos = $query->getResult();
+        return $cursos;
+    }
+    
 }
