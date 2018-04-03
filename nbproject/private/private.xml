@@ -3,14 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/Symfony/src/AppBundle/Repository/CursoRepository.php</file>
-            <file>file:/opt/lampp/htdocs/Symfony/src/AppBundle/Resources/config/validation.yml</file>
-            <file>file:/opt/lampp/htdocs/Symfony/src/AppBundle/Resources/config/routing.yml</file>
-            <file>file:/opt/lampp/htdocs/Symfony/composer.json</file>
-            <file>file:/opt/lampp/htdocs/Symfony/src/AppBundle/Form/CursoType.php</file>
-            <file>file:/opt/lampp/htdocs/Symfony/src/AppBundle/Controller/DefaultController.php</file>
-            <file>file:/opt/lampp/htdocs/Symfony/src/AppBundle/Controller/pruebasController.php</file>
-            <file>file:/opt/lampp/htdocs/Symfony/src/AppBundle/Resources/views/pruebas/form.html.twig</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/BlogBundle/Resources/config/doctrine/Entry.orm.yml</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/BlogBundle/Entity/Tag.php</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/BlogBundle/Resources/views/layout.html.twig</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/BlogBundle/Resources/views/Default/index.html.twig</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/BlogBundle/Entity/Category.php</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/BlogBundle/Resources/config/doctrine/Tag.orm.yml</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/BlogBundle/Controller/DefaultController.php</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/BlogBundle/Resources/config/doctrine/Category.orm.yml</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/BlogBundle/Entity/Entry.php</file>
+            <file>file:/opt/lampp/htdocs/Symfony/src/BlogBundle/Resources/config/doctrine/EntryTag.orm.yml</file>
         </group>
     </open-files>
 </project-private>

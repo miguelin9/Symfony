@@ -38,21 +38,23 @@ class DefaultController extends Controller
 //            echo "<hr/>";
 //        }
         
-        $em = $this->getDoctrine()->getManager();
-        $tag_repo = $em->getRepository("BlogBundle:Tag");
-        $tags = $tag_repo->findAll();
+//        $em = $this->getDoctrine()->getManager();
+//        $tag_repo = $em->getRepository("BlogBundle:Tag");
+//        $tags = $tag_repo->findAll();
+//        
+//        foreach ($tags as $tag) {
+//            echo $tag->getName()."<br/>";
+//            
+//            $entryTag = $tag->getEntryTag();
+//            foreach ($entryTag as $entry) {
+//                echo $entry->getEntry()->getTitle().", ";
+//            }
+//            echo "<hr/>";
+//        }
+//        
+//        die();
         
-        foreach ($tags as $tag) {
-            echo $tag->getName()."<br/>";
-            
-            $entryTag = $tag->getEntryTag();
-            foreach ($entryTag as $entry) {
-                echo $entry->getEntry()->getTitle().", ";
-            }
-            echo "<hr/>";
-        }
         
-        die();
         
         return $this->render('BlogBundle:Default:index.html.twig');
     }
