@@ -10,3 +10,7 @@ pruebas_index:
 pruebas_create:
     path: /pruebas/create
     defaults: { _controller: AppBundle:pruebas:create }
+    
+pruebas_read:
+    path: /pruebas/read
+    defaults: { _controller: AppBundle:pruebas:read }

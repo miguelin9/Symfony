@@ -58,5 +58,19 @@ class pruebasController extends Controller {
         
         die();
     }
+    
+    public function readAction() {
+        $em = $this->getDoctrine()->getManager();
+        $cursos_repo = $em->getRepository("AppBundle:Curso");
+        $cursos = $cursos_repo->findAll();
+        
+        foreach ($cursos as $curso) {
+            echo $curso->getTitulo()."<br/>";
+            echo $curso->getDescripcion()."<br/>";
+            echo $curso->getPrecio()."<br/><hr/>";
+        }
+        
+        die();
+    }
 
 }
