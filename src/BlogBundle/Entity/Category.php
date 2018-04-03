@@ -2,6 +2,8 @@
 
 namespace BlogBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Category
  */
@@ -21,9 +23,14 @@ class Category
      * @var string
      */
     private $description;
+    
+    protected $entry;
+    
+    public function __construct() {
+        $this->entry = new ArrayCollection();
+    }
 
-
-    /**
+        /**
      * Get id
      *
      * @return integer
@@ -79,6 +86,10 @@ class Category
     public function getDescription()
     {
         return $this->description;
+    }
+    
+    public function getEntries() {
+        return $this->entry;
     }
 }
 
