@@ -1,6 +1,6 @@
 AppBundle\Entity\Curso:
     type: entity
-    table: null
+    table: cursos
     repositoryClass: AppBundle\Repository\CursoRepository
     id:
         id:
