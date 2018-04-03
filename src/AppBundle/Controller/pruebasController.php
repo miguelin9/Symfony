@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Curso;
 use AppBundle\Form\CursoType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class pruebasController extends Controller {
     
@@ -206,6 +207,20 @@ class pruebasController extends Controller {
             'status' => $status,
             'data' => $data
         ));
+    }
+    
+    public function validarEmailAction($email) {
+        $emailConstraint = new Assert\Email();
+        $emailConstraint->message = "Pasame un buen correo";
+        
+        $error = $this->get("validator")->validate($email, $emailConstraint);
+        if (count($error)==0) {
+            echo "<h1>Correo valido!!</h1>";
+        } else {
+            echo $error[0]->getMessage();
+        }
+        
+        die();
     }
 
 }
