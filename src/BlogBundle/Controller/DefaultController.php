@@ -15,7 +15,13 @@ class DefaultController extends Controller
         foreach ($entries as $entry) {
             echo $entry->getTitle()."<br/>";
             echo $entry->getCategory()->getName()."<br/>";
-            echo $entry->getUser()->getName()."<br/><hr/>";
+            echo $entry->getUser()->getName()."<br/>";
+            
+            $tags = $entry->getEntryTag();
+            foreach ($tags as $tag) {
+                echo $tag->getTag()->getName().", ";
+            }
+            echo "<hr/>";
         }
         
         die();
