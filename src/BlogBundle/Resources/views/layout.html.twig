@@ -13,7 +13,7 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Symfony3</a>
+                <a class="navbar-brand" href="{{ path("blog_homepage") }}">Symfony3</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,14 +31,14 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toogle" data-toogle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog">prueba</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Entrar</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Ayuda</a></li>
-                            </ul>
-                        </li>
+                        {% if app.user == null %}
+                            <li><a href="{{ path("login") }}">Entrar</a></li>
+                        {% else %}                            
+                            <li>
+                                Bienvenido, {{ app.user.name }} {{ app.user.surname }} - 
+                                <a href="{{ path("logout") }}">Salir</a>
+                            </li>   
+                        {% endif %}
                     </ul>
                 </div>
             </nav>
