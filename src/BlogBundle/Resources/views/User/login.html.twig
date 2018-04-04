@@ -1,19 +1,19 @@
 {% extends "BlogBundle::layout.html.twig" %}
 
 {% block content %}
-    
+
     {% if is_granted('ROLE_USER') %}
         <strong>
             Estas logeado como usuario normal
         </strong>
     {% endif %}
-    
+
     {% if is_granted('ROLE_ADMIN') %}
         <strong>
             Estas logeado como usuario ADMINISTRADOR TODOPODEROSO
         </strong>
     {% endif %}
-    
+
     <div class="col-lg-4">
         <h2>Identificate</h2>
         <hr/>
@@ -27,6 +27,13 @@
             <input type="submit" value="Entrar" class="btn btn-success" />
             <input type="hidden" name="_target_path" value="/login" />
         </form>
+    </div>
+
+    <div class="col-lg-4">
+        <h2>Registrate</h2>
+        <hr/>
+        {{ form_start(form, {'action':'', 'method':'POST'}) }}
+        {{ form_end(form) }}
     </div>
     <hr/>
 {% endblock %}
