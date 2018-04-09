@@ -75,32 +75,41 @@ class EntryController extends Controller
         $entry = new Entry();
         $form = $this->createForm(EntryType::class, $entry);
 
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted()) {
-//            if ($form->isValid()) {
-//
-//                $em = $this->getDoctrine()->getManager();
-//
-//                $category = new Category();
-//                $category->setName($form->get('name')->getData());
-//                $category->setDescripcion($form->get('description')->getData());
-//
-//                $em->persist($category);
-//                $flush = $em->flush();
-//
-//                if ($flush == null) {
-//                    $status = "La categoria se ha creado correctamente";
-//                } else {
-//                    $status = "Error al añadir la categoria";
-//                }
-//            } else {
-//                $status = "La categoria no se ha creado porque el formulario no es valido";
-//            }
-//
-//            $this->session->getFlashBag()->add('status', $status);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+
+                $em = $this->getDoctrine()->getManager();
+                $category_repo = $em->getRepository('BlogBundle:Category');
+
+                $entry = new Entry();
+                $entry->setTitle($form->get('title')->getData());
+                $entry->setContent($form->get('content')->getData());
+                $entry->setStatus($form->get('status')->getData());
+                $entry->setImage(null);
+
+                $category = $category_repo->find($form->get('category')->getData());
+                $entry->setCategory($category);
+
+                $user = $this->getUser();
+                $entry->setUser($user);
+
+                $em->persist($entry);
+                $flush = $em->flush();
+
+                if ($flush == null) {
+                    $status = "La categoria se ha creado correctamente";
+                } else {
+                    $status = "Error al añadir la categoria";
+                }
+            } else {
+                $status = "La categoria no se ha creado porque el formulario no es valido";
+            }
+
+            $this->session->getFlashBag()->add('status', $status);
 //            return $this->redirectToRoute("blog_index_category");
-//        }
+        }
 
 
         return $this->render("BlogBundle:Entry:add.html.twig", array(
