@@ -1,0 +1,12 @@
+{% extends "BlogBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="col-lg-6">
+        <h2>Tags</h2>
+        {% for tag in tags %}
+            {{ tag.name }}<hr/>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+

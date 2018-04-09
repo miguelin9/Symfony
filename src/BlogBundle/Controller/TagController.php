@@ -18,6 +18,17 @@ class TagController extends Controller
         $this->session = new Session();
     }
 
+    public function indexAction() {
+        $em = $this->getDoctrine()->getManager();
+        $tag_repo = $em->getRepository("BlogBundle:Tag");
+        $tags = $tag_repo->findAll();
+
+        return $this->render("BlogBundle:Tag:index.html.twig", array(
+           "tags" => $tags
+        ));
+
+    }
+
     public function addAction(Request $request)
     {
         $tag = new Tag();
@@ -27,14 +38,27 @@ class TagController extends Controller
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-                
 
-                $status = "La etiqueta se ha creado correctamente";
+                $em = $this->getDoctrine()->getManager();
+
+                $tag = new Tag();
+                $tag->setName($form->get('name')->getData());
+                $tag->setDescripcion($form->get('description')->getData());
+
+                $em->persist($tag);
+                $flush = $em->flush();
+
+                if ($flush == null) {
+                    $status = "La etiqueta se ha creado correctamente";
+                } else {
+                    $status = "Error al añadir la etiqueta";
+                }
             } else {
                 $status = "La etiqueta no se ha creado porque el formulario no es valido";
             }
 
             $this->session->getFlashBag()->add('status', $status);
+            return $this->redirectToRoute("blog_index_tag");
         }
 
 
