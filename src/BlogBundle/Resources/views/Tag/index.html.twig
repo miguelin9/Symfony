@@ -2,10 +2,27 @@
 
 {% block content %}
     <div class="col-lg-6">
-        <h2>Tags</h2>
-        {% for tag in tags %}
-            {{ tag.name }}<hr/>
-        {% endfor %}
+        <h2>Etiquetas</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Eliminar</th>
+            </tr>
+            {% for tag in tags %}
+                <tr>
+                    <td>{{ tag.name }}</td>
+                    <td>{{ tag.descripcion }}</td>
+                    <td>
+                        {% if tag.entryTag|length == 0 %}
+                            <a href="{{ path("blog_delete_tag", {'id':tag.id}) }}" class="btn btn-danger">Eliminar</a>
+                        {% else %}
+                            Etiqueta en uso
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
 {% endblock %}
 
