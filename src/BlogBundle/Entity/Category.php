@@ -23,14 +23,15 @@ class Category
      * @var string
      */
     private $description;
-    
+
     protected $entry;
-    
-    public function __construct() {
+
+    public function __construct()
+    {
         $this->entry = new ArrayCollection();
     }
 
-        /**
+    /**
      * Get id
      *
      * @return integer
@@ -87,9 +88,16 @@ class Category
     {
         return $this->description;
     }
-    
-    public function getEntries() {
+
+    public function getEntries()
+    {
         return $this->entry;
     }
+
+    public function __toString()
+    {
+         return $this->name;
+    }
+
 }
 
