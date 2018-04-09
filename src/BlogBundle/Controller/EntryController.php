@@ -89,9 +89,10 @@ class EntryController extends Controller
                 $entry->setContent($form->get('content')->getData());
                 $entry->setStatus($form->get('status')->getData());
 
+                // upload file
                 $file = $form['image']->getData();
                 $ext = $file->guessExtension();
-                $file_name=time() . '.' . $ext;
+                $file_name = time() . '.' . $ext;
                 $file->move('uploads', $file_name);
                 $entry->setImage($file_name);
 
@@ -121,12 +122,24 @@ class EntryController extends Controller
             }
 
             $this->session->getFlashBag()->add('status', $status);
-            return $this->redirectToRoute("blog_homepage ");
+            return $this->redirectToRoute("blog_homepage");
         }
 
 
         return $this->render("BlogBundle:Entry:add.html.twig", array(
             "form" => $form->createView()
+        ));
+    }
+
+    public function indexAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entry_repo = $em->getRepository('BlogBundle:Entry');
+
+        $entries = $entry_repo->findAll();
+
+        return $this->render('BlogBundle:Entry:index.html.twig', array(
+            'entries'=>$entries
         ));
     }
 }

@@ -37,7 +37,6 @@ class CategoryController extends Controller
                 $category->setName($form->get('name')->getData());
                 $category->setDescription($form->get('description')->getData());
 
-                $em->persist($category);
                 $flush = $em->flush();
 
                 if ($flush == null) {

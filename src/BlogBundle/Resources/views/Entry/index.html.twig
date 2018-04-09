@@ -1,0 +1,18 @@
+{% extends "BlogBundle::layout.html.twig" %}
+
+{% block content %}
+    {% for entry in entries %}
+        <div class="col-lg-11">
+            <p class="pull-left"><img width="200px" src="{{ asset('uploads/'~entry.image) }}"/></p>
+            <p>{{ entry.title }}</p>
+            <p>{{ entry.category.name }}</p>
+
+            <p>
+                {% for et in entry.entryTag %}
+                    {{ et.tag.name }}
+                {% endfor %}
+            </p>
+            <hr/>
+        </div>
+    {% endfor %}
+{% endblock %}

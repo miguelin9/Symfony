@@ -54,7 +54,7 @@ class TagController extends Controller
 
                 $tag = new Tag();
                 $tag->setName($form->get('name')->getData());
-                $tag->setDescripcion($form->get('description')->getData());
+                $tag->setDescripcion($form->get('descripcion')->getData());
 
                 $em->persist($tag);
                 $flush = $em->flush();

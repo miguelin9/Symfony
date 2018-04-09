@@ -18,7 +18,7 @@ class EntryTag
     private $entry;
 
     /**
-     * @var \BlogBundle\Entity\Tags
+     * @var \BlogBundle\Entity\Tag
      */
     private $tag;
 
@@ -36,7 +36,7 @@ class EntryTag
     /**
      * Set entry
      *
-     * @param \BlogBundle\Entity\Entries $entry
+     * @param \BlogBundle\Entity\Entry $entry
      *
      * @return EntryTag
      */
@@ -50,7 +50,7 @@ class EntryTag
     /**
      * Get entry
      *
-     * @return \BlogBundle\Entity\Entries
+     * @return \BlogBundle\Entity\Entry
      */
     public function getEntry()
     {
@@ -74,7 +74,7 @@ class EntryTag
     /**
      * Get tag
      *
-     * @return \BlogBundle\Entity\Tags
+     * @return \BlogBundle\Entity\Tag
      */
     public function getTag()
     {
