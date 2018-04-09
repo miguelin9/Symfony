@@ -35,7 +35,7 @@ class CategoryController extends Controller
 
                 $category = new Category();
                 $category->setName($form->get('name')->getData());
-                $category->setDescripcion($form->get('description')->getData());
+                $category->setDescription($form->get('description')->getData());
 
                 $em->persist($category);
                 $flush = $em->flush();
@@ -96,7 +96,7 @@ class CategoryController extends Controller
 
                 $category = new Category();
                 $category->setName($form->get('name')->getData());
-                $category->setDescripcion($form->get('description')->getData());
+                $category->setDescription($form->get('description')->getData());
 
                 $em->persist($category);
                 $flush = $em->flush();

@@ -121,7 +121,7 @@ class EntryController extends Controller
             }
 
             $this->session->getFlashBag()->add('status', $status);
-//            return $this->redirectToRoute("blog_index_category");
+            return $this->redirectToRoute("blog_homepage ");
         }
 
 

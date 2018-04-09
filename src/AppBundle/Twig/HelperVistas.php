@@ -5,9 +5,11 @@ namespace AppBundle\Twig;
 class HelperVistas extends \Twig_Extension{
     
     public function getFunctions() {
-        return array(
-            'generateTable' => new \Twig_Function_Method($this, 'generateTable')
-        );
+        return [
+            'generateTable' => new \Twig_SimpleFunction(
+                'generateTable', [$this, 'generateTable']
+            ),
+        ];
     }
 
     public function generateTable($num_columns, $num_rows) {

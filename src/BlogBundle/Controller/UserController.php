@@ -36,7 +36,7 @@ class UserController extends Controller
                 $user_repo = $em->getRepository('BlogBundle:User');
                 $user = $user_repo->findOneBy(array('email' => $form->get('email')->getData()));
 
-                if (count($user == 0)) {
+                if ($user == null) {
                     $user = new User();
                     $user->setName($form->get("name")->getData());
                     $user->setSurname($form->get("surname")->getData());
