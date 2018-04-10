@@ -10,7 +10,7 @@ class EntryRepository extends EntityRepository
 {
     public function saveEntryTags($tags = null, $title = null, $category = null, $user = null, $entry = null)
     {
-        $em = $this->getManager();
+        $em = $this->getEntityManager();
 
         $tag_repo = $em->getRepository('BlogBundle:Tag');
 

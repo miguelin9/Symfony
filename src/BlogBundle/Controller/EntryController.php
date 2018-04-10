@@ -26,6 +26,11 @@ class EntryController extends Controller
 
         $entry = $entry_repo->find($id);
 
+        $tags_name = "";
+        foreach ($entry->getEntryTag() as $entryTag) {
+            $tags_name .= $entryTag->getTag()->getName() . ", ";
+        }
+
         $form = $this->createForm(EntryType::class, $entry);
 
         $form->handleRequest($request);
@@ -74,7 +79,8 @@ class EntryController extends Controller
 
         return $this->render("BlogBundle:Entry:edit.html.twig", array(
             "form" => $form->createView(),
-            "entry" => $entry
+            "entry" => $entry,
+            "tags_name" => $tags_name
         ));
     }
 

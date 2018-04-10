@@ -7,6 +7,8 @@
             <label>Imagen: </label>
             <img width="100px" src="{{ asset('uploads/'~entry.image) }}"/>
             {{ form_widget(form.image) }}
+            <label>Etiquetas:</label>
+            {{ form_widget(form.tags, {'value':tags_name}) }}
         {{ form_end(form) }}
     </div>
 {% endblock %}
