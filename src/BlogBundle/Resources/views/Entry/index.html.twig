@@ -12,6 +12,9 @@
                     {{ et.tag.name }}
                 {% endfor %}
             </p>
+            <p>
+                <a href="{{ path('blog_delete_entry', {'id':entry.id}) }}" class="btn btn-danger">Eliminar</a>
+            </p>
             <hr/>
         </div>
     {% endfor %}
