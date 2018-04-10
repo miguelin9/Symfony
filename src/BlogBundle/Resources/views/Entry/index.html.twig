@@ -6,15 +6,18 @@
             <p class="pull-left"><img width="200px" src="{{ asset('uploads/'~entry.image) }}"/></p>
             <p>{{ entry.title }}</p>
             <p>{{ entry.category.name }}</p>
-
+            <p>Autor: {{ entry.user.name }}</p>
             <p>
                 {% for et in entry.entryTag %}
                     {{ et.tag.name }}
                 {% endfor %}
             </p>
-            <p>
-                <a href="{{ path('blog_delete_entry', {'id':entry.id}) }}" class="btn btn-danger">Eliminar</a>
-            </p>
+            {% if app.user.id is defined and entry.user.id == app.user.id %}
+                <p>
+                    <a href="{{ path('blog_delete_entry', {'id':entry.id}) }}" class="btn btn-danger">Eliminar</a>
+                    <a href="{{ path('blog_edit_entry', {'id':entry.id}) }}" class="btn btn-warning">Editar</a>
+                </p>
+            {% endif %}
             <hr/>
         </div>
     {% endfor %}
