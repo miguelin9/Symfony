@@ -174,7 +174,7 @@ class EntryController extends Controller
         $em = $this->getDoctrine()->getManager();
         $entry_repo = $em->getRepository('BlogBundle:Entry');
 
-        $pageSize =5;
+        $pageSize =6;
         $entries = $entry_repo->getPaginateEntries($pageSize, $page);
 
         $totalItems = count($entries);

@@ -3,8 +3,7 @@
 {% block content %}
     <div class="col-lg-6">
         <h2>Etiquetas</h2>
-        <a href="{{ path("blog_add_tag") }}" class="btn btn-success">Añadir</a>
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped">
             <tr>
                 <th>Nombre</th>
                 <th>Descripción</th>
@@ -24,6 +23,9 @@
                 </tr>
             {% endfor %}
         </table>
+        <hr/>
+        <a href="{{ path("blog_add_tag") }}" class="btn btn-success">Añadir</a>
+        <hr/>
     </div>
 {% endblock %}
 

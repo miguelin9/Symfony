@@ -30,8 +30,8 @@ class EntryRepository extends EntityRepository
             $isset_tag = $tag_repo->findOneBy(array('name' => $tag));
             if ($isset_tag == null) {
                 $tab_obj = new Tag();
-                $tab_obj->setName($tag);
-                $tab_obj->setDescripcion($tag);
+                $tab_obj->setName(trim($tag));
+                $tab_obj->setDescripcion(trim($tag));
                 if (!empty(trim($tag))) {
                     $em->persist($tab_obj);
                     $em->flush();
@@ -53,7 +53,7 @@ class EntryRepository extends EntityRepository
         return $flush;
     }
 
-    public function getPaginateEntries($pageSize = 5, $currentPage = 1)
+    public function getPaginateEntries($pageSize = 6, $currentPage = 1)
     {
         $em = $this->getEntityManager();
 

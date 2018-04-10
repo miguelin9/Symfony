@@ -23,12 +23,20 @@
     "incenteev/composer-parameter-handler": "^2.0",
     "twig/twig": "^2.4",
     "twig/extensions": "^1.5",
-    "symfony/web-profiler-bundle": "^4.0"
+    "symfony/web-profiler-bundle": "^4.0",
+    "symfony/http-kernel": "~3.4",
+    "symfony/routing": "~3.4",
+    "symfony/twig-bridge": "~3.4",
+    "symfony/var-dumper": "~3.4"
   },
   "require-dev": {
     "sensio/generator-bundle": "^3.0",
     "symfony/phpunit-bridge": "^3.0",
-    "symfony/profiler-pack": "^1.0"
+    "symfony/profiler-pack": "^1.0",
+    "symfony/config": "~3.4",
+    "symfony/console": "~3.4",
+    "symfony/dependency-injection": "~3.4",
+    "symfony/stopwatch": "~3.4"
   },
   "scripts": {
     "post-install-cmd": [
