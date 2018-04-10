@@ -38,11 +38,11 @@ class EntryRepository extends EntityRepository
                 }
             }
 
-            $tag = $tag_repo->findOneBy(array('name' => $tag));
+            $tag_final = $tag_repo->findOneBy(array('name' => $tag));
 
             $entryTag = new EntryTag();
             $entryTag->setEntry($entry);
-            $entryTag->setTag($tag);
+            $entryTag->setTag($tag_final);
             $em->persist($entryTag);
 
 

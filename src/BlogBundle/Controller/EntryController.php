@@ -147,7 +147,8 @@ class EntryController extends Controller
                     $form->get('tags')->getData(),
                     $form->get('title')->getData(),
                     $category,
-                    $user
+                    $user,
+                    $entry
                 );
 
                 if ($flush == null) {
