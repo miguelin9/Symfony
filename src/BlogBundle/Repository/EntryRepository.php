@@ -22,28 +22,35 @@ class EntryRepository extends EntityRepository
                 'user' => $user
             ));
         }
-
-        $tags .= ',';
+        
+        if (substr($tags,-1, strlen($tags)) == ',') {
+            $tags = substr($tags,0,-1);
+        }
         $tags = explode(',', $tags);
 
         foreach ($tags as $tag) {
-            $isset_tag = $tag_repo->findOneBy(array('name' => $tag));
+            $isset_tag = $tag_repo->findOneBy(array('name' => trim($tag)));
             if ($isset_tag == null) {
                 $tab_obj = new Tag();
                 $tab_obj->setName(trim($tag));
                 $tab_obj->setDescripcion(trim($tag));
-                if (!empty(trim($tag))) {
+                if ($tab_obj != null) {
                     $em->persist($tab_obj);
                     $em->flush();
                 }
             }
 
-            $tag_final = $tag_repo->findOneBy(array('name' => $tag));
+            $tag_final = $tag_repo->findOneBy(array('name' => trim($tag)));
 
-            $entryTag = new EntryTag();
-            $entryTag->setEntry($entry);
-            $entryTag->setTag($tag_final);
-            $em->persist($entryTag);
+            $entryTag_repo = $em->getRepository('BlogBundle:EntryTag');
+            $entryTagAux = $entryTag_repo->findOneBy(array('tag' => $tag_final->getId(), 'entry' => $entry));
+
+            if ($entryTagAux == null) {
+                $entryTag = new EntryTag();
+                $entryTag->setEntry($entry);
+                $entryTag->setTag($tag_final);
+                $em->persist($entryTag);
+            }
 
 
         }
@@ -60,7 +67,7 @@ class EntryRepository extends EntityRepository
         $dql = "SELECT e FROM BlogBundle\Entity\Entry e ORDER BY e.id DESC";
 
         $query = $em->createQuery($dql)
-            ->setFirstResult($pageSize*($currentPage-1))
+            ->setFirstResult($pageSize * ($currentPage - 1))
             ->setMaxResults($pageSize);
 
         $paginator = new Paginator($query, $fetchJoinCollection = true);

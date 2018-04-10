@@ -31,6 +31,9 @@ class EntryController extends Controller
             $tags_name .= $entryTag->getTag()->getName() . ", ";
         }
 
+        $tags_name = trim($tags_name);
+        $tags_name = substr($tags_name,0,-1);
+
         $form = $this->createForm(EntryType::class, $entry);
 
         $form->handleRequest($request);
@@ -147,8 +150,7 @@ class EntryController extends Controller
                     $form->get('tags')->getData(),
                     $form->get('title')->getData(),
                     $category,
-                    $user,
-                    $entry
+                    $user
                 );
 
                 if ($flush == null) {

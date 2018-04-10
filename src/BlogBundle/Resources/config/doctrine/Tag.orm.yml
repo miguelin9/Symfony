@@ -27,5 +27,5 @@ BlogBundle\Entity\Tag:
         entryTag:
             targetEntity: EntryTag
             mappedBy: tag
-            cascade: ["persist"]
+#            cascade: ["persist"]
     lifecycleCallbacks: {  }
