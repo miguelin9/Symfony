@@ -39,3 +39,4 @@ security:
     access_control:
         - { path: ^/categories, roles: ROLE_ADMIN }
         - { path: ^/tags, roles: [ ROLE_ADMIN, ROLE_USER ] }
+        - { path: ^/entries/add, roles: [ ROLE_ADMIN, ROLE_USER ] }

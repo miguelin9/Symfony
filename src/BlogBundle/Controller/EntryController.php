@@ -169,15 +169,22 @@ class EntryController extends Controller
         ));
     }
 
-    public function indexAction()
+    public function indexAction($page)
     {
         $em = $this->getDoctrine()->getManager();
         $entry_repo = $em->getRepository('BlogBundle:Entry');
 
-        $entries = $entry_repo->findAll();
+        $pageSize =5;
+        $entries = $entry_repo->getPaginateEntries($pageSize, $page);
+
+        $totalItems = count($entries);
+        $pageCount = ceil($totalItems/$pageSize);
 
         return $this->render('BlogBundle:Entry:index.html.twig', array(
             'entries' => $entries,
+            'totalItems' => $totalItems,
+            'pagesCount' => $pageCount,
+            'page' => $page
         ));
     }
 }

@@ -21,4 +21,17 @@
             <hr/>
         </div>
     {% endfor %}
+
+    <ul class="pagination">
+        {% if page > 1 %}
+            <li class="page-item"><a href="{{ path('blog_homepage', {'page':page-1}) }}" class="page-link">&laquo</a> </li>
+        {% endif %}
+        {% for i in 1..pagesCount %}
+            <li class="page-item"><a href="{{ path('blog_homepage', {'page':i}) }}" class="page-link">{{ i }}</a> </li>
+        {% endfor %}
+        {% if page < pagesCount%}
+            <li class="page-item"><a href="{{ path('blog_homepage', {'page':page+1}) }}" class="page-link">&raquo</a> </li>
+        {% endif %}
+    </ul>
+
 {% endblock %}
