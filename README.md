@@ -24,7 +24,7 @@ Como hacerlo funcionar
 
   * Dentro de la carpeta clonada ejecutar **composer install**, cuando pida los datos de configuración el nombre de la base de datos es **blog**, el usuario y contraseña el que tu tengas, lo demás por defecto.
 
-  * Dar permisos de escritura y ejecución a los archivos que los pida. **sudo chmod 777 -R Symfony/**
+  * Dar permisos de escritura y ejecución a los archivos que los pida. Si no funciona prueba con **sudo chmod 777 -R Symfony/** pero esto da todos los permisos a todos los archivos (no recomendado).
 
 Información
 --------------
