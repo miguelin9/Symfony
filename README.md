@@ -22,7 +22,7 @@ Como hacerlo funcionar
   
   * Importar el fichero **database.sql** en tu base de datos.
 
-  * Dentro de la carpeta clonada ejecutar **composer install**.
+  * Dentro de la carpeta clonada ejecutar **composer install**, cuando pida los datos de configuración el nombre de la base de datos es **blog**, el usuario y contraseña el que tu tengas, lo demás por defecto.
 
   * Dar permisos de escritura y ejecución a los archivos que los pida. **sudo chmod 777 -R Symfony/**
 
