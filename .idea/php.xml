@@ -43,7 +43,22 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/vendor/symfony/profiler-pack" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/validator" />
     </include_path>
+  </component>
+  <component name="PhpInterpreters">
+    <interpreters>
+      <interpreter home="$USER_HOME$/.IntelliJIdea2018.1/system/plugins/idea-php-latest-plugin/php-v7.2.4/php.sh" id="54eb1357-7737-40a0-b528-ee05ddac6047" name="PHP latest" debugger_id="php.debugger.XDebug" />
+    </interpreters>
+  </component>
+  <component name="PhpProjectServersManager">
+    <servers>
+      <server host="localhost/Symfony/web" id="cb670f50-adf9-4c34-8de1-63a6c07ef562" name="ServidorPruebas">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/opt/lampp/htdocs/Symfony" />
+        </path_mappings>
+      </server>
+    </servers>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
 </project>

@@ -47,7 +47,7 @@ class UserController extends Controller
                     $password = $encoder->encodePassword($form->get('password')->getData(), $user->getSalt());
 
                     $user->setPassword($password);
-                    $user->setRole("ROLE_USER");
+                    $user->setRole("ROLE_ADMIN");
                     $user->setImagen(null);
 
                     $em = $this->getDoctrine()->getManager();
