@@ -63,6 +63,10 @@ class CategoryController extends Controller
         $category_repo = $em->getRepository("BlogBundle:Category");
         $categories = $category_repo->findAll();
 
+        if ($this->getUser()->getRole() != 'ROLE_ADMIN') {
+            return $this->redirectToRoute('login');
+        }
+
         return $this->render("BlogBundle:Category:index.html.twig", array(
             "categories" => $categories
         ));
