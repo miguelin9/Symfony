@@ -35,5 +35,3 @@ Son dos roles:
 * ROLE_USER
 
 Modificar en la base de datos o UserController.php para cambiar esto.
-
-**El directorio por defecto es Symfony/web/home**
